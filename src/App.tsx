@@ -35,6 +35,7 @@ function App(props: Props) {
 
   return (
     <div>
+      <h1>Game of Life, using React</h1>
       <Settings dispatch={dispatch} store={store} presets={presets} />
       <hr />
       <div className={`${play ? "playing" : ""}`}>
