@@ -7,6 +7,7 @@ const ReactCompilerConfig = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/game-of-life-vite-react-compiler/",
   plugins: [react({
     babel: {
       plugins: [
