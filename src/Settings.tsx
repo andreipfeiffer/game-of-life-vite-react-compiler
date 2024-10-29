@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Preset } from "./types";
-import "./Life.css";
 import { Store, Action, Renderer } from "./store";
 import { getInitialState } from "./utils";
 
