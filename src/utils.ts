@@ -55,7 +55,7 @@ export function getNextPopulation(grid: Grid): Grid {
 
   window.performance.mark("getNextPopulationEnd");
   window.performance.measure(
-    "🐌 getNextPopulation",
+    "⏳ getNextPopulation",
     "getNextPopulationStart",
     "getNextPopulationEnd"
   );
