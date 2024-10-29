@@ -41,15 +41,15 @@ export function getNextPopulation(grid: Grid): Grid {
       }
 
       // mark that the row has changed
-      if (next[row][col] !== grid[row][col]) {
-        isRowChanged = true;
-      }
+      // if (next[row][col] !== grid[row][col]) {
+      //   isRowChanged = true;
+      // }
     }
 
     if (!isRowChanged) {
       // copy row reference if it hasn't changed
       // so it is optimized by React.memo()
-      next[row] = grid[row];
+      // next[row] = grid[row];
     }
   }
 
