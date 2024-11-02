@@ -17,10 +17,10 @@ export const LifetimeValues: Record<
   { value: number; label: string }
 > = Object.freeze({
   1: { value: 1, label: "requestAnimationFrame()" },
-  2: { value: 16, label: "16ms" },
-  3: { value: 100, label: "100ms" },
-  4: { value: 300, label: "300ms" },
-  5: { value: 500, label: "0.5s" },
+  // 2: { value: 16, label: "16ms" },
+  2: { value: 100, label: "100ms" },
+  // 4: { value: 300, label: "300ms" },
+  3: { value: 500, label: "0.5s" },
 });
 
 function Settings(props: Props) {
@@ -71,7 +71,9 @@ function Settings(props: Props) {
           Canvas
         </option>
       </select>{" "}
-      Width:{" "}
+      <br />
+      <br />
+      Grid:{" "}
       <input
         type="number"
         value={width}
@@ -79,7 +81,7 @@ function Settings(props: Props) {
         maxLength={3}
         className="input"
       />{" "}
-      Height:{" "}
+      &times;{" "}
       <input
         type="number"
         value={height}
@@ -87,7 +89,7 @@ function Settings(props: Props) {
         maxLength={3}
         className="input"
       />{" "}
-      Size:{" "}
+      Cell:{" "}
       <input
         type="number"
         value={size}
@@ -100,6 +102,8 @@ function Settings(props: Props) {
       <br />
       <br />
       <div style={{ display: "flex", alignItems: "center" }}>
+        <button onClick={() => dispatch({ type: "NEXT_POPULATION" })}>Next</button>
+        &nbsp;
         <button onClick={() => dispatch({ type: "TOGGLE_PLAY" })}>
           {play ? "Stop" : "Play"}
         </button>{" "}
@@ -115,7 +119,7 @@ function Settings(props: Props) {
           type="range"
           value={lifetime}
           min={1}
-          max={5}
+          max={Object.keys(LifetimeValues).length}
           onChange={(e) =>
             dispatch({ type: "SET_LIFETIME", payload: +e.target.value })
           }

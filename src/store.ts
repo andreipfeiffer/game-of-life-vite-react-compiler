@@ -1,4 +1,5 @@
 import { Grid } from "./types";
+import { getNextPopulation } from "./utils";
 
 export type Store = {
   play: boolean;
@@ -19,6 +20,7 @@ export type Action =
     }
   | { type: "SET_PRESET"; payload: string }
   | { type: "SET_POPULATION"; payload: Grid }
+  | { type: "NEXT_POPULATION"; }
   | { type: "TOGGLE_PLAY" };
 
 export type Renderer = "html" | "canvas";
@@ -54,6 +56,10 @@ export function reducer(state: Store, action: Action): Store {
 
   if (action.type === "SET_POPULATION") {
     return { ...state, population: action.payload };
+  }
+
+  if (action.type === "NEXT_POPULATION") {
+    return { ...state, population: getNextPopulation(state.population) };
   }
 
   return state;
