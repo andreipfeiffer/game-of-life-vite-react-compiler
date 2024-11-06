@@ -1,7 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-const ReactCompilerConfig = {
+const ENABLE_OPTIMISATIONS = false;
+
+const ReactCompilerConfig = ENABLE_OPTIMISATIONS ? {
+} : {
   compilationMode: "annotation",
 };
 
